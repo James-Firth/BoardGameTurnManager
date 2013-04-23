@@ -81,5 +81,6 @@ public class EnterNamesActivity extends Activity {
 		getMenuInflater().inflate(R.menu.enter_names, menu);
 		return true;
 	}
+	
 
 }

@@ -23,15 +23,11 @@ public class TurnActivity extends Activity {
 		setContentView(R.layout.activity_turn);
 		Intent incIntent = getIntent();
 		String temp = incIntent.getStringExtra(EnterNamesActivity.EXTRA_MESSAGE);
-		names = temp.split(";");
-		
-		System.out.println(names[0]);
-		System.out.println(names[1]);
-		
+		names = temp.split(";");		
 		
 		num_players = names.length;
 		currentStep = 0;
-		currentPlayer = 0;
+		currentPlayer = num_players-1;
 		this.setTitle(names[currentPlayer]);
 		steps = getResources().getStringArray(R.array.arkham_steps);
 		TextView textViewTemp = (TextView)findViewById(R.id.current_instructions);
@@ -56,7 +52,7 @@ public class TurnActivity extends Activity {
           
         //displays alert dialog
         alert.setView(instructs);
-        alert.show();
+        //alert.show();
 	}
 	
 	public void previousTurn(View view)
@@ -66,9 +62,9 @@ public class TurnActivity extends Activity {
 		if(currentStep < 0)
 		{
 			currentStep = steps.length-1;
-			currentPlayer--;
-			if(currentPlayer < 0)
-				currentPlayer = names.length-1;
+			currentPlayer++;
+			if(currentPlayer >= num_players)
+				currentPlayer = 0;
 		}
 		temp.setText(steps[currentStep]);
 		this.setTitle(names[currentPlayer]);
@@ -80,9 +76,9 @@ public class TurnActivity extends Activity {
 		if(currentStep >= steps.length)
 		{
 			currentStep = 0;
-			currentPlayer++;
-			if(currentPlayer >= names.length)
-				currentPlayer = 0;
+			currentPlayer--;
+			if(currentPlayer < 0)
+				currentPlayer = num_players-1;
 		}
 		temp.setText(steps[currentStep]);
 		this.setTitle(names[currentPlayer]);
@@ -94,5 +90,7 @@ public class TurnActivity extends Activity {
 		getMenuInflater().inflate(R.menu.turn, menu);
 		return true;
 	}
+	
+	
 
 }
