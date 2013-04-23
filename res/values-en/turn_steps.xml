@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arkham_steps">
+        <item >Upkeep: Refresh Exhausted Cards</item>
+        <item >Upkeep: Perform Upkeep Actions</item>
+        <item >Upkeep: Adjust Skills</item>
+        <item >Arkham Movement: Move based on \'speed\' skill</item>
+        <item >Arkham Movement: Evade or Fight Monsters</item>
+        <item >Arkham Movement: Pick up clues (ONLY if you end your turn at location with clues)</item>
+        <item >Other World Movement: If you are in the 1st area, move to the second area</item>
+        <item >Other World Movement: If you are in the 2nd area, return to Arkham through a corresponding gate marker and place an \'explored\' marker underneath yoru investigator. Note: If no open gates exist, you are lost in time and space.</item>
+    </string-array>
+    
+</resources>
