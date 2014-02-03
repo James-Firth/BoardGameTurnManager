@@ -15,6 +15,9 @@ An Android app used to manage turns for games (Currently Only Arkham Horror)
 * Publish it properly with signing
 * Consider Play Store Release
 
+### Testing Information
+Debugging and testing performed on an HTC One running Kitkat.
+
 ###Screenshot Walkthrough
 
 When you first open the app select number of players:
