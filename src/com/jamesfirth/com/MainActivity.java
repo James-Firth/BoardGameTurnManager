@@ -13,18 +13,25 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	public final static String EXTRA_MESSAGE = "com.jamesfirth.bgtm.MESSAGE";
-	AlertDialog.Builder alert;
+	private static AlertDialog.Builder alert;
 	public static final int MAX_PLAYERS = 8;
 	protected NumberPicker np;
 	public Activity ma;
 	
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         //Create and display the alert dialog
-        alert = new AlertDialog.Builder(MainActivity.this);
+        makeAlert();
+        alert.show();
+    }
+    
+    private void makeAlert()
+    {
+    	alert = new AlertDialog.Builder(MainActivity.this);
 
         alert.setTitle(R.string.enter_player_numbers);
 
@@ -40,7 +47,6 @@ public class MainActivity extends Activity {
         np.setValue(4);
 
         //Set listeners
-        
         //save num players
         alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int whichButton) {
@@ -58,21 +64,14 @@ public class MainActivity extends Activity {
           }
         });
         
-        
         //displays alert dialog
         alert.setView(np);
     }
 
     public void pnAlert(View view)
     {
-        alert.show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+		makeAlert();
+		alert.show();
     }
     
 }

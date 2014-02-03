@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="arkham_steps">
-        <item >Upkeep: Refresh Exhausted Cards</item>
+        <item >Upkeep Refresh Exhausted Cards</item>
         <item >Upkeep: Perform Upkeep Actions</item>
         <item >Upkeep: Adjust Skills</item>
         <item >Arkham Movement: Move based on \'speed\' skill</item>

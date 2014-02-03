@@ -40,7 +40,7 @@ public class EnterNamesActivity extends Activity {
             	
             	for(int i=0; i < num_players; i++)
             	{
-            		names = ((EditText)(thelayout).getChildAt(i+1)).getText().toString()+";"+names;
+            		names = ((EditText)(thelayout).getChildAt(i+1)).getText().toString().trim()+";"+names;
             		startGame(names);
             	}
             	
@@ -57,6 +57,8 @@ public class EnterNamesActivity extends Activity {
         intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
+	
+	
 	public LinearLayout addAll()
 	{
 		LinearLayout linearLayout = (LinearLayout)findViewById(R.id.activity_enter_names);
@@ -74,12 +76,6 @@ public class EnterNamesActivity extends Activity {
 	    // add button to layout
 	    linearLayout.addView(btn); 
 	    return linearLayout;
-	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.enter_names, menu);
-		return true;
 	}
 	
 

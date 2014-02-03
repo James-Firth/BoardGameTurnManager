@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.Html;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ public class TurnActivity extends Activity {
 	private static int num_players;
 	private static int currentPlayer;
 	private static String[] steps;
+	private static boolean first_time;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,6 +47,7 @@ public class TurnActivity extends Activity {
         alert.setPositiveButton(R.string.continuemsg, new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int whichButton) {
           //do something
+        	first_time = true;
           }
         });
         
@@ -52,7 +56,22 @@ public class TurnActivity extends Activity {
           
         //displays alert dialog
         alert.setView(instructs);
-        //alert.show();
+        if(!first_time)
+        	alert.show();
+	}
+	
+	public void showHelp()
+	{
+		if(alert != null)
+		{
+			alert.show();
+		}
+	}
+	
+	public void onBackPressed()
+	{
+		first_time = false;
+		super.onBackPressed();
 	}
 	
 	public void previousTurn(View view)
@@ -69,6 +88,7 @@ public class TurnActivity extends Activity {
 		temp.setText(steps[currentStep]);
 		this.setTitle(names[currentPlayer]);
 	}
+	
 	public void nextTurn(View view)
 	{
 		TextView temp = (TextView)findViewById(R.id.current_instructions);
@@ -78,17 +98,13 @@ public class TurnActivity extends Activity {
 			currentStep = 0;
 			currentPlayer--;
 			if(currentPlayer < 0)
+			{
 				currentPlayer = num_players-1;
+			}
+			Toast.makeText(getApplicationContext(), "It is now "+names[currentPlayer]+"'s turn.", Toast.LENGTH_SHORT).show();
 		}
 		temp.setText(steps[currentStep]);
 		this.setTitle(names[currentPlayer]);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.turn, menu);
-		return true;
 	}
 	
 	
