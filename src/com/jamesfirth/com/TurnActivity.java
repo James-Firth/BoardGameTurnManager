@@ -5,12 +5,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.Html;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-//uhoh
+
+
 public class TurnActivity extends Activity {
 	AlertDialog.Builder alert;
 	private static int currentStep;
@@ -101,7 +100,10 @@ public class TurnActivity extends Activity {
 			{
 				currentPlayer = num_players-1;
 			}
-			Toast.makeText(getApplicationContext(), "It is now "+names[currentPlayer]+"'s turn.", Toast.LENGTH_SHORT).show();
+			if(num_players > 1)
+			{
+				Toast.makeText(getApplicationContext(), "It is now "+names[currentPlayer]+"'s turn.", Toast.LENGTH_SHORT).show();
+			}
 		}
 		temp.setText(steps[currentStep]);
 		this.setTitle(names[currentPlayer]);

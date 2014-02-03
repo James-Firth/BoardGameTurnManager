@@ -3,14 +3,10 @@ package com.jamesfirth.com;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class EnterNamesActivity extends Activity {
 
@@ -35,7 +31,7 @@ public class EnterNamesActivity extends Activity {
             public void onClick(View v) {
                 //Go to next activity
             	String names = "";
-            	int childcount = ((LinearLayout)findViewById(R.id.activity_enter_names)).getChildCount();
+            	//int childcount = ((LinearLayout)findViewById(R.id.activity_enter_names)).getChildCount();
             	LinearLayout thelayout = (LinearLayout)findViewById(R.id.activity_enter_names);
             	
             	for(int i=0; i < num_players; i++)
