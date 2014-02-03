@@ -27,7 +27,7 @@ Then you enter player names:
 
 Then some instructions:
 
-![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Start%20game.png)
+![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Instructions.png)
 
 Typical turn screen appearance. Player name is in the Action Bar, Step instructions are dead centre with a "previous step" button in the bottom left to deal with accidental presses (Hardware back button will go to the enter player name screens)
 
