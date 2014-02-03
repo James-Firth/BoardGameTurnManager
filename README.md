@@ -18,16 +18,21 @@ An Android app used to manage turns for games (Currently Only Arkham Horror)
 ###Screenshot Walkthrough
 
 When you first open the app select number of players:
+
 ![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Start%20Screen.png)
 
 Then you enter player names:
+
 ![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Enter%20Names.png)
 
 Then some instructions:
+
 ![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Start%20game.png)
 
 Typical turn screen appearance. Player name is in the Action Bar, Step instructions are dead centre with a "previous step" button in the bottom left to deal with accidental presses (Hardware back button will go to the enter player name screens)
+
 ![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Turn%20appearance.png)
 
 When it's a new player's turn there's a little toast in case you don't notice the text at the top:
+
 ![Start screen](https://raw2.github.com/James-Firth/BoardGameTurnManager/master/screenshots/Toast%20when%20next%20players%20turn.png)
